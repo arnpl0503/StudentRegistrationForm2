@@ -33,6 +33,20 @@ namespace StudentRegistrationForm2
         {
 
         }
+         public void DisplayInfo(string Lastname, string FirstName, string MiddleName, string Gender, string month, string day, string year, string program)
+        {
+          MessageBox.Show("Student Name: " + Lastname + "," + FirstName + " " + MiddleName + "\nGeder: " + Gender +
+        "\nDate of Birth: " + month + "/" + day + "/" + year + "\nProgram: " + program);
+        }
+         public void DisplayInfo(string Lastname, string FirstName, string MiddleName, string Gender, string program)
+        {
+          MessageBox.Show("Student Name" + Lastname + ", " + FirstName + MiddleName + "\nGender" + Gender + "\nProgram");
+        }
+
+         public void DisplayInfo(string Lastname, string FirstName, string MiddleName, string program)
+       {
+          MessageBox.Show("Student Name" + Lastname + ", " + FirstName + MiddleName + "\nProgram" + program);
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -88,7 +102,12 @@ namespace StudentRegistrationForm2
             string Firstname = textBox3.Text;
             string Middlename = textBox2.Text;
 
-            MessageBox.Show("Student name: " + Firstname + " " + Middlename + " " + Lastname + "\nGender: " + gender + "\nDate of Birth: " + month + "/" + day + "/" + year  + "\nProgram: " + program);
+           DisplayInfo(Lastname, FirstName, MiddleName, gender, month, day, year, program);
+           DisplayInfo(Lastname,  FirstName,  MiddleName, gender, program);
+           DisplayInfo(Lastname, FirstName,  MiddleName,  program);
         }
+           openFileDialog1.ShowDialog();
+            pictureBox1.ImageLocation = openFileDialog1.FileName;
+       }
     }
 }
